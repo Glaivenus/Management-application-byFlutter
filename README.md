@@ -18,7 +18,7 @@ A simple yet structured Customer Relationship Management (CRM) system developed 
 
 Here are some glimpses of what this CRM system looks like:
 
-![Screenshot 1](./sample/1.png)
-![Screenshot 2](./sample/2.png)
-![Screenshot 3](./sample/3.png)
-![Screenshot 4](./sample/4.png)
+<img src="./sample/1.png" width="200" alt="Screenshot 1"/>
+<img src="./sample/2.png" width="200" alt="Screenshot 2"/>
+<img src="./sample/3.png" width="200" alt="Screenshot 3"/>
+<img src="./sample/4.png" width="200" alt="Screenshot 4"/>
