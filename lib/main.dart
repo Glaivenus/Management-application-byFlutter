@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'management application',
       theme: ThemeData(
-        brightness:Brightness.light,
+        brightness:Brightness.dark,
         primarySwatch: Colors.red,
         primaryColor: const Color(0xFF212121),
         canvasColor: const Color(0xFF303030),
@@ -37,59 +37,44 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length:3,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-
-          leading:
-            Container(
+      length: 3,
+      child: WillPopScope(
+        onWillPop: () async => false, // 禁止通过滑动手势返回
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            leading: Container(
               padding: EdgeInsets.all(5),
-              child: Image.asset('images/logo2.png',
-              fit: BoxFit.cover,
+              child: Image.asset(
+                'images/logo2.png',
+                fit: BoxFit.fitHeight,
               ),
+            ),
+            leadingWidth: 210,
+            title: Text('Hi, Users'),
+            titleSpacing: 10,
+            bottom: const TabBar(
+              tabs: [
+                Tab(text: 'Dashboard'),
+                Tab(text: 'Documents'),
+                Tab(text: 'Appointments'),
+              ],
+            ),
           ),
-          leadingWidth: 210,
-          title: Text('Hi,     Users'),
-          titleSpacing: 10,
-
-
-
-
-
-
-
-
-
-          bottom: TabBar(
-          tabs:const [//contents
-            Tab(text: 'Dashboard',),
-            Tab(text: 'Documents',),
-            Tab(text: 'Appointments',),
-
-          ],
-
-
-
-
+          body: TabBarView(
+            children: [
+              DashboardPage(),
+              DocumentsPage(),
+              AppointmentsPage(),
+            ],
           ),
-      ),
-
-
-      body: TabBarView(
-          children: [
-          DashboardPage(), // 对应 Dashboard 标签的页面
-          DocumentsPage(), // 对应 Documents 标签的页面
-          AppointmentsPage(), // 对应 Appointments 标签的页面
-      ],
-    ),
-        drawer: const MyDrawerWidget(),
+          drawer: const MyDrawerWidget(),
+        ),
       ),
     );
-    }
-    void buttonPressed(){}
+  }
+}
 
-    }
 
 //drawer
 class MyDrawerWidget extends StatelessWidget {

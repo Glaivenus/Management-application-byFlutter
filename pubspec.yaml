@@ -31,6 +31,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_pdfview: ^1.2.7
+  path_provider: ^2.1.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -60,6 +62,12 @@ flutter:
   uses-material-design: true
   assets:
     - images/logo2.png
+    - sample/CNY Greetings1.png
+    - sample/CNY Greetings2.png
+    - sample/CNY Greetings3.png
+    - images/trbg.png
+    - sample/dictionary.pdf
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
